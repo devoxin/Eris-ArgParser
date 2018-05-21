@@ -134,17 +134,18 @@ class ArgParser {
       args = args.replace(match[0], formatted)
     }
 
-    args = args.replace('@everyone', '@\u200Beveryone')
+    args = args
+      .replace('@everyone', '@\u200Beveryone')
       .replace('@here', '@\u200Bhere') // Clean everyone/here mentions
 
     return args
   }
 
-  isEmpty () {
+  get isEmpty () {
     return !this.args[0]
   }
 
-  textLength () {
+  get textLength () {
     return this.args.join(' ').length
   }
 
